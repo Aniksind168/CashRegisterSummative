@@ -183,7 +183,6 @@ namespace CashRegisterSummative
         private void new_orderButton_Click(object sender, EventArgs e)
 
         {
-
            //Clear Variables
             int numRings = 0;
             int numCharms = 0;
@@ -269,7 +268,6 @@ namespace CashRegisterSummative
             g.DrawString("", drawFont, drawBrush, 310, 380);
 
             g.DrawString("", drawFont, drawBrush, 360, 410);
-
         }
-    }
+    
 }

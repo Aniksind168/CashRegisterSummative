@@ -30,36 +30,30 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.pandoraLabel = new System.Windows.Forms.Label();
-            this.leftLabel = new System.Windows.Forms.Label();
             this.ringInput = new System.Windows.Forms.TextBox();
             this.charmInput = new System.Windows.Forms.TextBox();
             this.braceletInput = new System.Windows.Forms.TextBox();
             this.ringLabel = new System.Windows.Forms.Label();
             this.charmLabel = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.braceletLabel = new System.Windows.Forms.Label();
             this.calculateTotals = new System.Windows.Forms.Button();
-            this.subtotalLabel = new System.Windows.Forms.Label();
             this.totalcostLabel = new System.Windows.Forms.Label();
             this.subLabel = new System.Windows.Forms.Label();
-            this.taxTotal = new System.Windows.Forms.Label();
-            this.subtotalOuput = new System.Windows.Forms.Label();
-            this.taxOutput = new System.Windows.Forms.Label();
-            this.totalOutput = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.taxLabel = new System.Windows.Forms.Label();
+            this.lineLabel = new System.Windows.Forms.Label();
+            this.tenderedLabel = new System.Windows.Forms.Label();
             this.tenderedInput = new System.Windows.Forms.TextBox();
             this.changeButton = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.changeLabel = new System.Windows.Forms.Label();
+            this.change_Label = new System.Windows.Forms.Label();
             this.receieptButton = new System.Windows.Forms.Button();
             this.subtotalOutput = new System.Windows.Forms.Label();
-            this.taxesOuput = new System.Windows.Forms.Label();
+            this.taxesOutput = new System.Windows.Forms.Label();
             this.totalcostOutput = new System.Windows.Forms.Label();
             this.changeOuput = new System.Windows.Forms.Label();
-            this.outputLabel = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.tryLabel = new System.Windows.Forms.Label();
             this.new_orderButton = new System.Windows.Forms.Button();
+            this.leftLabel = new System.Windows.Forms.Label();
+            this.tryLabel2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // pandoraLabel
@@ -71,15 +65,6 @@
             this.pandoraLabel.Size = new System.Drawing.Size(806, 57);
             this.pandoraLabel.TabIndex = 0;
             this.pandoraLabel.Text = "                             PANDORA";
-            // 
-            // leftLabel
-            // 
-            this.leftLabel.BackColor = System.Drawing.Color.AntiqueWhite;
-            this.leftLabel.Font = new System.Drawing.Font("Optima Demi", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.leftLabel.Location = new System.Drawing.Point(12, 63);
-            this.leftLabel.Name = "leftLabel";
-            this.leftLabel.Size = new System.Drawing.Size(233, 414);
-            this.leftLabel.TabIndex = 1;
             // 
             // ringInput
             // 
@@ -124,16 +109,16 @@
             this.charmLabel.TabIndex = 6;
             this.charmLabel.Text = "Charms";
             // 
-            // label3
+            // braceletLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.AntiqueWhite;
-            this.label3.Font = new System.Drawing.Font("Optima Demi", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(30, 133);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 19);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Bracelet";
+            this.braceletLabel.AutoSize = true;
+            this.braceletLabel.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.braceletLabel.Font = new System.Drawing.Font("Optima Demi", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.braceletLabel.Location = new System.Drawing.Point(30, 133);
+            this.braceletLabel.Name = "braceletLabel";
+            this.braceletLabel.Size = new System.Drawing.Size(74, 19);
+            this.braceletLabel.TabIndex = 7;
+            this.braceletLabel.Text = "Bracelets";
             // 
             // calculateTotals
             // 
@@ -146,14 +131,6 @@
             this.calculateTotals.Text = "Calculate Totals!";
             this.calculateTotals.UseVisualStyleBackColor = false;
             this.calculateTotals.Click += new System.EventHandler(this.calculateTotals_Click);
-            // 
-            // subtotalLabel
-            // 
-            this.subtotalLabel.AutoSize = true;
-            this.subtotalLabel.Location = new System.Drawing.Point(147, 267);
-            this.subtotalLabel.Name = "subtotalLabel";
-            this.subtotalLabel.Size = new System.Drawing.Size(0, 13);
-            this.subtotalLabel.TabIndex = 9;
             // 
             // totalcostLabel
             // 
@@ -177,70 +154,37 @@
             this.subLabel.TabIndex = 11;
             this.subLabel.Text = "Sub-Total";
             // 
-            // taxTotal
+            // taxLabel
             // 
-            this.taxTotal.AutoSize = true;
-            this.taxTotal.BackColor = System.Drawing.Color.AntiqueWhite;
-            this.taxTotal.Font = new System.Drawing.Font("Optima Demi", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.taxTotal.Location = new System.Drawing.Point(30, 240);
-            this.taxTotal.Name = "taxTotal";
-            this.taxTotal.Size = new System.Drawing.Size(34, 19);
-            this.taxTotal.TabIndex = 12;
-            this.taxTotal.Text = "Tax";
+            this.taxLabel.AutoSize = true;
+            this.taxLabel.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.taxLabel.Font = new System.Drawing.Font("Optima Demi", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.taxLabel.Location = new System.Drawing.Point(30, 240);
+            this.taxLabel.Name = "taxLabel";
+            this.taxLabel.Size = new System.Drawing.Size(34, 19);
+            this.taxLabel.TabIndex = 12;
+            this.taxLabel.Text = "Tax";
             // 
-            // subtotalOuput
+            // lineLabel
             // 
-            this.subtotalOuput.AutoSize = true;
-            this.subtotalOuput.Location = new System.Drawing.Point(106, 263);
-            this.subtotalOuput.Name = "subtotalOuput";
-            this.subtotalOuput.Size = new System.Drawing.Size(0, 13);
-            this.subtotalOuput.TabIndex = 13;
+            this.lineLabel.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lineLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lineLabel.Location = new System.Drawing.Point(20, 307);
+            this.lineLabel.Name = "lineLabel";
+            this.lineLabel.Size = new System.Drawing.Size(216, 10);
+            this.lineLabel.TabIndex = 16;
+            this.lineLabel.Text = "_______________________________";
             // 
-            // taxOutput
+            // tenderedLabel
             // 
-            this.taxOutput.AutoSize = true;
-            this.taxOutput.Location = new System.Drawing.Point(103, 294);
-            this.taxOutput.Name = "taxOutput";
-            this.taxOutput.Size = new System.Drawing.Size(0, 13);
-            this.taxOutput.TabIndex = 14;
-            // 
-            // totalOutput
-            // 
-            this.totalOutput.AutoSize = true;
-            this.totalOutput.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.totalOutput.Location = new System.Drawing.Point(103, 332);
-            this.totalOutput.Name = "totalOutput";
-            this.totalOutput.Size = new System.Drawing.Size(0, 13);
-            this.totalOutput.TabIndex = 15;
-            // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(20, 307);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(216, 10);
-            this.label1.TabIndex = 16;
-            this.label1.Text = "_______________________________";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(40, 368);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 13);
-            this.label2.TabIndex = 17;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.AntiqueWhite;
-            this.label4.Font = new System.Drawing.Font("Optima Demi", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(19, 326);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 19);
-            this.label4.TabIndex = 18;
-            this.label4.Text = "Tendered";
+            this.tenderedLabel.AutoSize = true;
+            this.tenderedLabel.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.tenderedLabel.Font = new System.Drawing.Font("Optima Demi", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tenderedLabel.Location = new System.Drawing.Point(19, 326);
+            this.tenderedLabel.Name = "tenderedLabel";
+            this.tenderedLabel.Size = new System.Drawing.Size(78, 19);
+            this.tenderedLabel.TabIndex = 18;
+            this.tenderedLabel.Text = "Tendered";
             // 
             // tenderedInput
             // 
@@ -262,23 +206,16 @@
             this.changeButton.UseVisualStyleBackColor = false;
             this.changeButton.Click += new System.EventHandler(this.changeButton_Click);
             // 
-            // label5
+            // change_Label
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Optima Demi", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(19, 406);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(63, 19);
-            this.label5.TabIndex = 21;
-            this.label5.Text = "Change";
-            // 
-            // changeLabel
-            // 
-            this.changeLabel.AutoSize = true;
-            this.changeLabel.Location = new System.Drawing.Point(106, 422);
-            this.changeLabel.Name = "changeLabel";
-            this.changeLabel.Size = new System.Drawing.Size(0, 13);
-            this.changeLabel.TabIndex = 22;
+            this.change_Label.AutoSize = true;
+            this.change_Label.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.change_Label.Font = new System.Drawing.Font("Optima Demi", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.change_Label.Location = new System.Drawing.Point(19, 406);
+            this.change_Label.Name = "change_Label";
+            this.change_Label.Size = new System.Drawing.Size(63, 19);
+            this.change_Label.TabIndex = 21;
+            this.change_Label.Text = "Change";
             // 
             // receieptButton
             // 
@@ -303,16 +240,16 @@
             this.subtotalOutput.TabIndex = 24;
             this.subtotalOutput.Text = "$0.00";
             // 
-            // taxesOuput
+            // taxesOutput
             // 
-            this.taxesOuput.AutoSize = true;
-            this.taxesOuput.BackColor = System.Drawing.Color.AntiqueWhite;
-            this.taxesOuput.Font = new System.Drawing.Font("Optima Demi", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.taxesOuput.Location = new System.Drawing.Point(106, 240);
-            this.taxesOuput.Name = "taxesOuput";
-            this.taxesOuput.Size = new System.Drawing.Size(44, 18);
-            this.taxesOuput.TabIndex = 25;
-            this.taxesOuput.Text = "$0.00";
+            this.taxesOutput.AutoSize = true;
+            this.taxesOutput.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.taxesOutput.Font = new System.Drawing.Font("Optima Demi", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.taxesOutput.Location = new System.Drawing.Point(106, 240);
+            this.taxesOutput.Name = "taxesOutput";
+            this.taxesOutput.Size = new System.Drawing.Size(44, 18);
+            this.taxesOutput.TabIndex = 25;
+            this.taxesOutput.Text = "$0.00";
             // 
             // totalcostOutput
             // 
@@ -328,6 +265,7 @@
             // changeOuput
             // 
             this.changeOuput.AutoSize = true;
+            this.changeOuput.BackColor = System.Drawing.Color.AntiqueWhite;
             this.changeOuput.Font = new System.Drawing.Font("Optima Demi", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.changeOuput.Location = new System.Drawing.Point(106, 406);
             this.changeOuput.Name = "changeOuput";
@@ -335,23 +273,16 @@
             this.changeOuput.TabIndex = 27;
             this.changeOuput.Text = "$0.00";
             // 
-            // outputLabel
+            // tryLabel
             // 
-            this.outputLabel.AutoSize = true;
-            this.outputLabel.BackColor = System.Drawing.Color.Pink;
-            this.outputLabel.ForeColor = System.Drawing.Color.Black;
-            this.outputLabel.Location = new System.Drawing.Point(118, 41);
-            this.outputLabel.Name = "outputLabel";
-            this.outputLabel.Size = new System.Drawing.Size(0, 13);
-            this.outputLabel.TabIndex = 28;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(31, 354);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(0, 13);
-            this.label6.TabIndex = 29;
+            this.tryLabel.AutoSize = true;
+            this.tryLabel.BackColor = System.Drawing.Color.Pink;
+            this.tryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tryLabel.ForeColor = System.Drawing.Color.Black;
+            this.tryLabel.Location = new System.Drawing.Point(106, 36);
+            this.tryLabel.Name = "tryLabel";
+            this.tryLabel.Size = new System.Drawing.Size(0, 13);
+            this.tryLabel.TabIndex = 28;
             // 
             // new_orderButton
             // 
@@ -365,36 +296,48 @@
             this.new_orderButton.UseVisualStyleBackColor = false;
             this.new_orderButton.Click += new System.EventHandler(this.new_orderButton_Click);
             // 
+            // leftLabel
+            // 
+            this.leftLabel.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.leftLabel.Font = new System.Drawing.Font("Optima Demi", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.leftLabel.Location = new System.Drawing.Point(12, 63);
+            this.leftLabel.Name = "leftLabel";
+            this.leftLabel.Size = new System.Drawing.Size(233, 414);
+            this.leftLabel.TabIndex = 1;
+            // 
+            // tryLabel2
+            // 
+            this.tryLabel2.AutoSize = true;
+            this.tryLabel2.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.tryLabel2.Location = new System.Drawing.Point(31, 356);
+            this.tryLabel2.Name = "tryLabel2";
+            this.tryLabel2.Size = new System.Drawing.Size(0, 13);
+            this.tryLabel2.TabIndex = 31;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::CashRegisterSummative.Properties.Resources.pandora;
+            this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(620, 499);
+            this.Controls.Add(this.tryLabel2);
             this.Controls.Add(this.new_orderButton);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.outputLabel);
+            this.Controls.Add(this.tryLabel);
             this.Controls.Add(this.changeOuput);
             this.Controls.Add(this.totalcostOutput);
-            this.Controls.Add(this.taxesOuput);
+            this.Controls.Add(this.taxesOutput);
             this.Controls.Add(this.subtotalOutput);
             this.Controls.Add(this.receieptButton);
-            this.Controls.Add(this.changeLabel);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.change_Label);
             this.Controls.Add(this.changeButton);
             this.Controls.Add(this.tenderedInput);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.totalOutput);
-            this.Controls.Add(this.taxOutput);
-            this.Controls.Add(this.subtotalOuput);
-            this.Controls.Add(this.taxTotal);
+            this.Controls.Add(this.tenderedLabel);
+            this.Controls.Add(this.lineLabel);
+            this.Controls.Add(this.taxLabel);
             this.Controls.Add(this.subLabel);
             this.Controls.Add(this.totalcostLabel);
-            this.Controls.Add(this.subtotalLabel);
             this.Controls.Add(this.calculateTotals);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.braceletLabel);
             this.Controls.Add(this.charmLabel);
             this.Controls.Add(this.ringLabel);
             this.Controls.Add(this.braceletInput);
@@ -413,36 +356,30 @@
         #endregion
 
         private System.Windows.Forms.Label pandoraLabel;
-        private System.Windows.Forms.Label leftLabel;
         private System.Windows.Forms.TextBox ringInput;
         private System.Windows.Forms.TextBox charmInput;
         private System.Windows.Forms.TextBox braceletInput;
         private System.Windows.Forms.Label ringLabel;
         private System.Windows.Forms.Label charmLabel;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label braceletLabel;
         private System.Windows.Forms.Button calculateTotals;
-        private System.Windows.Forms.Label subtotalLabel;
         private System.Windows.Forms.Label totalcostLabel;
         private System.Windows.Forms.Label subLabel;
-        private System.Windows.Forms.Label taxTotal;
-        private System.Windows.Forms.Label subtotalOuput;
-        private System.Windows.Forms.Label taxOutput;
-        private System.Windows.Forms.Label totalOutput;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label taxLabel;
+        private System.Windows.Forms.Label lineLabel;
+        private System.Windows.Forms.Label tenderedLabel;
         private System.Windows.Forms.TextBox tenderedInput;
         private System.Windows.Forms.Button changeButton;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label changeLabel;
+        private System.Windows.Forms.Label change_Label;
         private System.Windows.Forms.Button receieptButton;
         private System.Windows.Forms.Label subtotalOutput;
-        private System.Windows.Forms.Label taxesOuput;
+        private System.Windows.Forms.Label taxesOutput;
         private System.Windows.Forms.Label totalcostOutput;
         private System.Windows.Forms.Label changeOuput;
-        private System.Windows.Forms.Label outputLabel;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label tryLabel;
         private System.Windows.Forms.Button new_orderButton;
+        private System.Windows.Forms.Label leftLabel;
+        private System.Windows.Forms.Label tryLabel2;
     }
 }
 

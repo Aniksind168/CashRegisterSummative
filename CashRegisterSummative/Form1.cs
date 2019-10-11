@@ -11,10 +11,14 @@ using System.Threading;
 using System.Media;
 
 namespace CashRegisterSummative
-{
+{/// <summary>
+/// Anika Sindwani, October 2019, Cash Register Summative
+/// </summary>
+
     public partial class Form1 : Form
     {
-       
+      //*Declaration of Variables
+
         //Item Prices
         const int RING_PRICE = 80;
         const int CHARM_PRICE = 20;
@@ -43,9 +47,6 @@ namespace CashRegisterSummative
         //Change
         double change = 0;
 
-        //Before Tax
-        int beforeTax;
-
         public Form1()
         {
             InitializeComponent();
@@ -59,13 +60,14 @@ namespace CashRegisterSummative
                 numRings = Convert.ToInt16(ringInput.Text);
                 numCharms = Convert.ToInt16(charmInput.Text);
                 numBracelets = Convert.ToInt16(braceletInput.Text);
+
                 //Sub-Total
                 subTotal = numRings * RING_PRICE + numCharms * CHARM_PRICE + numBracelets * BRACELET_PRICE;
                 subtotalOutput.Text = subTotal.ToString("C");
 
                 //Tax-Amount 
                 taxAmount = subTotal * TAX_RATE;
-                taxesOuput.Text = taxAmount.ToString("C");
+                taxesOutput.Text = taxAmount.ToString("C");
 
                 //Total Cost
                 totalCost = subTotal + taxAmount;
@@ -73,32 +75,31 @@ namespace CashRegisterSummative
             }
             catch
             {
-                outputLabel.Text = "*Please enter a numeric value, or enter 0 into" +
+                tryLabel.Text = "*Please enter a numeric value, or enter 0 into" +
                     " items that are not being purchased";
             }
         }
         private void changeButton_Click(object sender, EventArgs e)
         {
             try
-            {
+            { 
+                //Tendered amount into Variable
                 tendered = Convert.ToDouble(tenderedInput.Text);
+
+                //Change Calculation
                 change = tendered - totalCost;
                 changeOuput.Text = change.ToString("C");
             }
             catch
             {
-                label6.Text = "Please enter a value into the tendered box";
+                tryLabel2.Text = "Please enter a value into the tendered box";
             }
-
-           
         }
 
         private void receieptButton_Click(object sender, EventArgs e)
         {
             //Presets
             Graphics g = this.CreateGraphics();
-            Pen receieptPen = new Pen(Color.White, 20);
-            Font titleFont = new Font("courier new", 16);
             SolidBrush receiptBrush = new SolidBrush(Color.White);
             SoundPlayer receieptSound = new SoundPlayer(Properties.Resources.registerSound);
             Font drawFont = new Font("Courier New", 11, FontStyle.Bold);
@@ -111,7 +112,6 @@ namespace CashRegisterSummative
             Thread.Sleep(200);
 
             //Second Rectangle
-
             g.FillRectangle(receiptBrush, 290, 93, 290, 50);
            g.DrawString("Pandora Inc.", drawFont, drawBrush, 380, 100);
             Thread.Sleep(250);
@@ -133,7 +133,6 @@ namespace CashRegisterSummative
             Thread.Sleep(250);
             g.DrawString("Sub Total         " + subTotal, drawFont, drawBrush, 310, 200);
 
-
             //Sixth Rectangle
             g.FillRectangle(receiptBrush, 290, 203, 290, 50);
             g.DrawString("Rings       X"  + numRings + "  @  " + RING_PRICE.ToString("C"), drawFont, drawBrush, 310, 200);
@@ -148,7 +147,6 @@ namespace CashRegisterSummative
             //Eigth Rectangle
             g.FillRectangle(receiptBrush, 290, 263, 290, 50);
             g.DrawString("Bracelets   X" + numBracelets + "  @  " + BRACELET_PRICE.ToString("C"), drawFont, drawBrush, 310, 240);
-
             Thread.Sleep(250);
 
             //Ninth Rectangle
@@ -160,7 +158,7 @@ namespace CashRegisterSummative
             g.FillRectangle(receiptBrush, 290, 313, 290, 50);
             g.DrawString("Subtotal     " + subTotal.ToString("C"), drawFont, drawBrush, 310, 280);
             Thread.Sleep(250);
-
+   
             //Eleventh Rectangle
             g.FillRectangle(receiptBrush, 290, 343, 290, 50);
             g.DrawString("Tax          " + taxAmount.ToString("C"), drawFont, drawBrush, 310, 300);
@@ -171,42 +169,107 @@ namespace CashRegisterSummative
             g.FillRectangle(receiptBrush, 290, 373, 290, 50);
             g.DrawString("Total        " + totalCost.ToString("C"), drawFont, drawBrush, 310, 320);
             Thread.Sleep(250);
+            receieptSound.Play();
 
             //Thirteenth Rectangle
             g.FillRectangle(receiptBrush, 290, 403, 290, 50);
             g.DrawString("Tendered     " + tendered.ToString("C"), drawFont, drawBrush, 310, 360);
-            g.DrawString("Change       " + change.ToString("C"), drawFont, drawBrush, 310, 380);
-            g.DrawString("Have A Great Day!    ", drawFont, drawBrush, 360, 410);
-            receieptSound.Play();
             Thread.Sleep(250);
-
-
+            g.DrawString("Change       " + change.ToString("C"), drawFont, drawBrush, 310, 380);
+            Thread.Sleep(250);
+            g.DrawString("Have A Great Day!    ", drawFont, drawBrush, 360, 410);
         }
 
         private void new_orderButton_Click(object sender, EventArgs e)
+
         {
-            //Number of Items Purchased
+
+           //Clear Variables
             int numRings = 0;
             int numCharms = 0;
             int numBracelets = 0;
-
-            //Sub-Total
+   
             int subTotal;
 
-            //Tax Amount
             double taxAmount = 0;
 
-            //Total Cost
             double totalCost = 0;
 
-            //Amount Tendered
             double tendered = 0;
 
-            //Change
             double change = 0;
 
-            //
+            //Clear Inputs & Outputs
             ringInput.Text = "";
+            charmInput.Text = "";
+            braceletInput.Text = "";
+            tenderedInput.Text = "";
+            changeOuput.Text = "$0.00";
+            subtotalOutput.Text = "$0.00";
+            taxesOutput.Text = "$0.00";
+            totalcostOutput.Text = "$0.00";
+
+            //Clear Receipt 
+            Graphics g = this.CreateGraphics();
+            SolidBrush clearBrush = new SolidBrush(Color.LightBlue);
+            Font drawFont = new Font("Courier New", 11, FontStyle.Bold);
+            SolidBrush drawBrush = new SolidBrush(Color.Black);
+
+           //First Rectangle
+            g.FillRectangle(clearBrush, 290, 63, 290, 50);
+            g.DrawString("", drawFont, drawBrush, 380, 100);
+
+            //Second Rectangle
+            g.FillRectangle(clearBrush, 290, 93, 290, 50);
+            g.DrawString ("", drawFont, drawBrush, 380, 100);
+
+            //Third Rectangle 
+            g.FillRectangle(clearBrush, 290, 123, 290, 50);
+
+            //Fourth Rectangle
+            g.FillRectangle(clearBrush, 290, 153, 290, 50);
+            g.DrawString("", drawFont, drawBrush, 310, 135);
+
+            //Fifth Rectangle 
+            g.FillRectangle(clearBrush, 290, 183, 290, 50);
+            g.DrawString("", drawFont, drawBrush, 310, 155);
+            g.DrawString("", drawFont, drawBrush, 310, 200);
+
+            //Sixth Rectangle
+            g.FillRectangle(clearBrush, 290, 203, 290, 50);
+            g.DrawString("", drawFont, drawBrush, 310, 220);
+
+            //Seventh Rectangle
+            g.FillRectangle(clearBrush, 290, 233, 290, 50);
+            g.DrawString ("", drawFont, drawBrush, 310, 220);
+
+            //Eigth Rectangle
+            g.FillRectangle(clearBrush, 290, 263, 290, 50);
+            g.DrawString("", drawFont, drawBrush, 310, 240);
+
+            //Ninth Rectangle
+            g.FillRectangle(clearBrush, 290, 293, 290, 50);
+
+            //Tenth Rectangle
+            g.FillRectangle(clearBrush, 290, 313, 290, 50);
+            g.DrawString("", drawFont, drawBrush, 310, 280);
+
+            //Eleventh Rectangle
+            g.FillRectangle(clearBrush, 290, 343, 290, 50);
+            g.DrawString("", drawFont, drawBrush, 310, 300);
+
+            //Twelfth Rectangle
+            g.FillRectangle(clearBrush, 290, 373, 290, 50);
+            g.DrawString("", drawFont, drawBrush, 310, 320);
+
+            //Thirteenth Rectangle
+            g.FillRectangle(clearBrush, 290, 403, 290, 50);
+            g.DrawString("", drawFont, drawBrush, 310, 360);
+
+            g.DrawString("", drawFont, drawBrush, 310, 380);
+
+            g.DrawString("", drawFont, drawBrush, 360, 410);
+
         }
     }
 }

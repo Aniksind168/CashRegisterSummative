@@ -17,7 +17,7 @@ namespace CashRegisterSummative
 
     public partial class Form1 : Form
     {
-      //*Declaration of Variables
+        //*Declaration of Variables
 
         //Item Prices
         const int RING_PRICE = 80;
@@ -82,7 +82,7 @@ namespace CashRegisterSummative
         private void changeButton_Click(object sender, EventArgs e)
         {
             try
-            { 
+            {
                 //Tendered amount into Variable
                 tendered = Convert.ToDouble(tenderedInput.Text);
 
@@ -113,7 +113,7 @@ namespace CashRegisterSummative
 
             //Second Rectangle
             g.FillRectangle(receiptBrush, 290, 93, 290, 50);
-           g.DrawString("Pandora Inc.", drawFont, drawBrush, 380, 100);
+            g.DrawString("Pandora Inc.", drawFont, drawBrush, 380, 100);
             Thread.Sleep(250);
 
             //Third Rectangle
@@ -135,7 +135,7 @@ namespace CashRegisterSummative
 
             //Sixth Rectangle
             g.FillRectangle(receiptBrush, 290, 203, 290, 50);
-            g.DrawString("Rings       X"  + numRings + "  @  " + RING_PRICE.ToString("C"), drawFont, drawBrush, 310, 200);
+            g.DrawString("Rings       X" + numRings + "  @  " + RING_PRICE.ToString("C"), drawFont, drawBrush, 310, 200);
             Thread.Sleep(250);
 
             //Seventh Rectangle
@@ -158,7 +158,7 @@ namespace CashRegisterSummative
             g.FillRectangle(receiptBrush, 290, 313, 290, 50);
             g.DrawString("Subtotal     " + subTotal.ToString("C"), drawFont, drawBrush, 310, 280);
             Thread.Sleep(250);
-   
+
             //Eleventh Rectangle
             g.FillRectangle(receiptBrush, 290, 343, 290, 50);
             g.DrawString("Tax          " + taxAmount.ToString("C"), drawFont, drawBrush, 310, 300);
@@ -183,11 +183,11 @@ namespace CashRegisterSummative
         private void new_orderButton_Click(object sender, EventArgs e)
 
         {
-           //Clear Variables
+            //Clear Variables
             int numRings = 0;
             int numCharms = 0;
             int numBracelets = 0;
-   
+
             int subTotal;
 
             double taxAmount = 0;
@@ -214,13 +214,13 @@ namespace CashRegisterSummative
             Font drawFont = new Font("Courier New", 11, FontStyle.Bold);
             SolidBrush drawBrush = new SolidBrush(Color.Black);
 
-           //First Rectangle
+            //First Rectangle
             g.FillRectangle(clearBrush, 290, 63, 290, 50);
             g.DrawString("", drawFont, drawBrush, 380, 100);
 
             //Second Rectangle
             g.FillRectangle(clearBrush, 290, 93, 290, 50);
-            g.DrawString ("", drawFont, drawBrush, 380, 100);
+            g.DrawString("", drawFont, drawBrush, 380, 100);
 
             //Third Rectangle 
             g.FillRectangle(clearBrush, 290, 123, 290, 50);
@@ -240,7 +240,7 @@ namespace CashRegisterSummative
 
             //Seventh Rectangle
             g.FillRectangle(clearBrush, 290, 233, 290, 50);
-            g.DrawString ("", drawFont, drawBrush, 310, 220);
+            g.DrawString("", drawFont, drawBrush, 310, 220);
 
             //Eigth Rectangle
             g.FillRectangle(clearBrush, 290, 263, 290, 50);
@@ -269,5 +269,6 @@ namespace CashRegisterSummative
 
             g.DrawString("", drawFont, drawBrush, 360, 410);
         }
-    
+
+    }
 }

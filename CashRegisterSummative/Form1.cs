@@ -184,19 +184,19 @@ namespace CashRegisterSummative
 
         {
             //Clear Variables
-            int numRings = 0;
-            int numCharms = 0;
-            int numBracelets = 0;
+             numRings = 0;
+             numCharms = 0;
+             numBracelets = 0;
 
-            int subTotal;
+             subTotal = 0;
 
-            double taxAmount = 0;
+            taxAmount = 0;
 
-            double totalCost = 0;
+            totalCost = 0;
 
-            double tendered = 0;
+            tendered = 0;
 
-            double change = 0;
+             change = 0;
 
             //Clear Inputs & Outputs
             ringInput.Text = "";
@@ -206,68 +206,13 @@ namespace CashRegisterSummative
             changeOuput.Text = "$0.00";
             subtotalOutput.Text = "$0.00";
             taxesOutput.Text = "$0.00";
-            totalcostOutput.Text = "$0.00";
+            totalcostOutput.Text = "";
 
-            //Clear Receipt 
             Graphics g = this.CreateGraphics();
-            SolidBrush clearBrush = new SolidBrush(Color.LightBlue);
-            Font drawFont = new Font("Courier New", 11, FontStyle.Bold);
-            SolidBrush drawBrush = new SolidBrush(Color.Black);
 
-            //First Rectangle
-            g.FillRectangle(clearBrush, 290, 63, 290, 50);
-            g.DrawString("", drawFont, drawBrush, 380, 100);
+            g.Clear(Color.LightBlue);
 
-            //Second Rectangle
-            g.FillRectangle(clearBrush, 290, 93, 290, 50);
-            g.DrawString("", drawFont, drawBrush, 380, 100);
-
-            //Third Rectangle 
-            g.FillRectangle(clearBrush, 290, 123, 290, 50);
-
-            //Fourth Rectangle
-            g.FillRectangle(clearBrush, 290, 153, 290, 50);
-            g.DrawString("", drawFont, drawBrush, 310, 135);
-
-            //Fifth Rectangle 
-            g.FillRectangle(clearBrush, 290, 183, 290, 50);
-            g.DrawString("", drawFont, drawBrush, 310, 155);
-            g.DrawString("", drawFont, drawBrush, 310, 200);
-
-            //Sixth Rectangle
-            g.FillRectangle(clearBrush, 290, 203, 290, 50);
-            g.DrawString("", drawFont, drawBrush, 310, 220);
-
-            //Seventh Rectangle
-            g.FillRectangle(clearBrush, 290, 233, 290, 50);
-            g.DrawString("", drawFont, drawBrush, 310, 220);
-
-            //Eigth Rectangle
-            g.FillRectangle(clearBrush, 290, 263, 290, 50);
-            g.DrawString("", drawFont, drawBrush, 310, 240);
-
-            //Ninth Rectangle
-            g.FillRectangle(clearBrush, 290, 293, 290, 50);
-
-            //Tenth Rectangle
-            g.FillRectangle(clearBrush, 290, 313, 290, 50);
-            g.DrawString("", drawFont, drawBrush, 310, 280);
-
-            //Eleventh Rectangle
-            g.FillRectangle(clearBrush, 290, 343, 290, 50);
-            g.DrawString("", drawFont, drawBrush, 310, 300);
-
-            //Twelfth Rectangle
-            g.FillRectangle(clearBrush, 290, 373, 290, 50);
-            g.DrawString("", drawFont, drawBrush, 310, 320);
-
-            //Thirteenth Rectangle
-            g.FillRectangle(clearBrush, 290, 403, 290, 50);
-            g.DrawString("", drawFont, drawBrush, 310, 360);
-
-            g.DrawString("", drawFont, drawBrush, 310, 380);
-
-            g.DrawString("", drawFont, drawBrush, 360, 410);
+          
         }
 
     }

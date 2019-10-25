@@ -209,10 +209,7 @@ namespace CashRegisterSummative
             totalcostOutput.Text = "";
 
             Graphics g = this.CreateGraphics();
-
             g.Clear(Color.LightBlue);
-
-          
         }
 
     }

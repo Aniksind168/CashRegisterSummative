@@ -208,6 +208,7 @@ namespace CashRegisterSummative
             taxesOutput.Text = "$0.00";
             totalcostOutput.Text = "";
 
+            //Clear Reciept
             Graphics g = this.CreateGraphics();
             g.Clear(Color.LightBlue);
         }
